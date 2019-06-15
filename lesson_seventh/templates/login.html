@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Логин</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+      <label for="">{{field.label}}</label>
+      <div>{{field}}</div>
+      {% if field.errors %}
+       <p>{{field.errors}}</p>
+      {% endif %}
+      {% endfor %}
+        <button type="submit">Войти</button>
+    </form>
+</body>
+</html>
